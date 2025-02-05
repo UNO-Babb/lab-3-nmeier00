@@ -19,20 +19,22 @@ def main():
   approxPi = 4/1
   sign = -1
   denom = 3
-  while round(approxPi, 2) != round(realPi, 2):
+  decimalPlace = int(input("To how many digits after the decimal point do you want to approximate pi? "))
+  while round(approxPi,decimalPlace) != round(realPi,decimalPlace):
     
-    #print(approxPi)
+    print(approxPi)
 
     approxPi = approxPi + ((sign * 4)/denom)
     sign = sign * -1
-    denom = denom + 2
+    denom = denom + decimalPlace
 
 
 
   end = time.time()
 
   elapsedTime = end - start
-  print(elapsedTime)
+  #print(elapsedTime)
+  print(round(approxPi,decimalPlace))
 
 if __name__ == '__main__':
   main()
